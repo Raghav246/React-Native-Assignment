@@ -10,7 +10,7 @@ function HomeScreen() {
   const { userData } = useContext(UserContext);
   return (
     <View style={{ justifyContent: "center", alignItems: "center", flex: 1 }}>
-      <Text>Welcome {userData.username}</Text>
+      <Text style={{color:'red'}}>Welcome {userData.username}</Text>
     </View>
   );
 }
