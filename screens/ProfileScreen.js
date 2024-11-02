@@ -5,12 +5,12 @@ import UserAvatar from "react-native-user-avatar";
 import tw from "twrnc";
 
 export default function ProfileScreen() {
-  const { userData } = useContext(UserContext);
+  const { userData = {} } = useContext(UserContext);
   return (
     <View style={tw`bg-white h-full p-5`}>
       {/* Profile Picture */}
       <View style={styles.profilePictureContainer}>
-        <UserAvatar size={100} name={userData.username} />
+        <UserAvatar size={100} name={userData.username ||''} />
       </View>
 
       {/* User Info */}
