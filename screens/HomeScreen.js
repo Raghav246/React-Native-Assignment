@@ -5,6 +5,8 @@ import { Ionicons } from "@expo/vector-icons";
 import ProfileScreen from "./ProfileScreen";
 import { useContext } from "react";
 import { UserContext } from "../UserContext";
+import { TouchableOpacity } from "react-native";
+import ProductList from "./ProductList";
 
 function HomeScreen() {
   const { userData } = useContext(UserContext);
@@ -30,6 +32,9 @@ export default function HomeApp() {
               } else if (route.name === "Profile") {
                 iconName = "person-outline"; // Change this to 'person' for filled icon
               }
+              else if (route.name === "Product") {
+                iconName = "grid-outline"; // Change this to 'person' for filled icon
+              }
 
               return <Ionicons name={iconName} size={size} color={color} />;
             },
@@ -40,6 +45,7 @@ export default function HomeApp() {
         >
           <Tab.Screen name="Home" component={HomeScreen} />
           <Tab.Screen name="Profile" component={ProfileScreen} />
+          <Tab.Screen name="Product" component={ProductList} />
         </Tab.Navigator>
       </NavigationContainer>
     </>

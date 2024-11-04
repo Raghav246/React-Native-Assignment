@@ -1,10 +1,10 @@
 import { useContext } from "react";
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import { UserContext } from "../UserContext";
 import UserAvatar from "react-native-user-avatar";
 import tw from "twrnc";
 
-export default function ProfileScreen() {
+export default function ProfileScreen(props) {
   const { userData = {} } = useContext(UserContext);
   return (
     <View style={tw`bg-white h-full p-5`}>
